@@ -1,0 +1,29 @@
+<x-filament-widgets::widget>
+    <x-filament::section>
+        <h1>Rekap Presensi Bulan Ini : {{ \Carbon\Carbon::now()->format('F Y') }}</h1>
+        <table class="table-auto">
+            <tbody>
+                <tr>
+                    <td>Sakit</td>
+                    <td>:</td>
+                    <td>{{\App\Models\Siswa::sakit(auth()->user()->siswa->id,\Carbon\Carbon::now())}}</td>
+                </tr>
+                <tr>
+                    <td>Izin</td>
+                    <td>:</td>
+                    <td>{{\App\Models\Siswa::izin(auth()->user()->siswa->id,\Carbon\Carbon::now())}}</td>
+                </tr>
+                <tr>
+                    <td>Alfa</td>
+                    <td>:</td>
+                    <td>{{\App\Models\Siswa::alfa(auth()->user()->siswa->id,\Carbon\Carbon::now())}}</td>
+                </tr>
+                <tr>
+                    <td>Hadir</td>
+                    <td>:</td>
+                    <td>{{\App\Models\Siswa::hadir(auth()->user()->siswa->id,\Carbon\Carbon::now())}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </x-filament::section>
+</x-filament-widgets::widget>
